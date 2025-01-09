@@ -1,7 +1,7 @@
-import matplotlib.pyplot as plt
-import matplotlib.animation as animation
-
 def is_valid(board, row, col, num):
+    '''
+    This is a helper function to check if a number can be placed in a cell
+    '''
     for i in range(9):
         if board[row][i] == num or board[i][col] == num:
             return False
@@ -14,6 +14,9 @@ def is_valid(board, row, col, num):
     return True
 
 def find_mrv(board):
+    '''
+    This is a helper function to find the cell with the minimum remaining values
+    '''
     min_count = 10
     mrv_position = (-1, -1)
     for row in range(9):
@@ -30,6 +33,9 @@ def find_mrv(board):
 all_boards = []
 
 def solve_sudoku(board):
+    '''
+    This is the main function to solve the sudoku puzzle
+    '''
     all_boards.append([row[:] for row in board])
     empty = find_mrv(board)
     if empty == (-1, -1):
@@ -44,4 +50,3 @@ def solve_sudoku(board):
             board[row][col] = 0
 
     return False
-
