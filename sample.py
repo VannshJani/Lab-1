@@ -1,3 +1,8 @@
+# Module docstring
+'''
+This module contains the functions to solve a sudoku puzzle
+'''
+
 def is_valid(board, row, col, num):
     '''
     This is a helper function to check if a number can be placed in a cell
