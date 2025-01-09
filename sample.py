@@ -8,7 +8,7 @@ def is_valid(board, row, col, num):
     This is a helper function to check if a number can be placed in a cell
     '''
     for i in range(9):
-        if board[row][i] == num or board[i][col] == num:
+        if num in (board[row][i], board[i][col]):
             return False
 
     start_row, start_col = 3 * (row // 3), 3 * (col // 3)
